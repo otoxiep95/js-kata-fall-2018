@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+            width: 100vw;
+            height: 100vh;
+        }
+
+        h3 {
+            margin-top: 20px;
+            margin-left: 20px;
+        }
+
+        #cookies {
+            background-color: chartreuse;
+            width: 95vw;
+            height: 20vh;
+
+        }
+
+        button {
+            width: 10vw;
+            height: 5vh;
+            border-radius: 20%;
+            background-color: white;
+            box-shadow: 0;
+            border: 0;
+            margin-left: 20px;
+        }
+
+        .slideInAnim {
+            animation: slideIn 2s forwards;
+        }
+
+        .slideOutAnim {
+            animation: slideOut 2s forwards;
+        }
+
+        @keyframes slideIn {
+            from {
+                margin-top: -30vh;
+            }
+            to {
+                margin-top: 2vh;
+            }
+        }
+
+        @keyframes slideOut {
+            from {
+                margin-top: 2vh;
+            }
+            to {
+                margin-top: -30vh;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="slideInAnim" id="cookies">
+        <h3>THIS WEBSITE USES COOKIES PLEASE DONT EAT THEM ALL</h3>
+        <button id="accept">YES</button>
+
+
+
+    </div>
+
+    <script>
+        var cookieDiv = document.getElementById('cookies');
+        var button = document.getElementById('accept');
+
+        button.addEventListener('click', slideOutFunc);
+
+
+
+        function slideOutFunc() {
+            cookieDiv.classList.remove('slideInAnim');
+            cookieDiv.classList.add('slideOutAnim');
+        }
+
+
+
+    </script>
+</body>
+
+</html>
